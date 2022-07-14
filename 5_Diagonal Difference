@@ -1,0 +1,36 @@
+Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+
+For example, the square matrix  is shown below:
+
+1 2 3
+4 5 6
+9 8 9  
+The left-to-right diagonal = . The right to left diagonal = . Their absolute difference is .
+
+Function description
+
+Complete the  Diagonal Differnce function in the editor below.
+
+diagonalDifference takes the following parameter:
+
+int arr[n][m]: an array of integers
+Return
+
+int: the absolute diagonal difference
+
+
+
+Code:- 
+
+int diagonalDifference(vector<vector<int>> arr) {
+    int sum1=0;
+    int sum2=0;
+    for(int i=0;i<arr.size();i++)
+    {
+        sum1+=arr[i][i];
+        sum2+=arr[i][arr.size()-i-1];
+    }
+    
+    return abs(sum1-sum2);
+
+}
